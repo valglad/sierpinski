@@ -44,6 +44,10 @@ def reshape(width, height):
     glLoadIdentity()
     gluPerspective(45, aspect, 0.1, 20.0)
 
+def drag():
+    # Get cube rotations when mouse is dragged
+    return
+
 def draw():
     global angle
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
@@ -96,9 +100,9 @@ def get_vertices(k, d, b, m=1, A=None):
             if len([_ for _ in next_dig if _ in A]) > m:
                 add = False
                 break
-            p = map(lambda x: x // b, p)
+            p = list(map(lambda x: x // b, p))
         if add:
-            vts[point] = map(lambda x: 2*x/(lim-1) - 1, point)
+            vts[point] = list(map(lambda x: 2*x/(lim-1) - 1, point))
     return vts
 
 def get_edges(vertices, d):
@@ -138,6 +142,7 @@ def main():
     glutCreateWindow("Sierpinski")
     glutDisplayFunc(draw)
     glutReshapeFunc(reshape)
+    #glutMotionFunc(drag);
     glutTimerFunc(0, timer, 0)
     initGL()
 
