@@ -15,4 +15,11 @@ This script uses PyOpenGL which needs to be installed separately. This can be do
 ```
 pip install PyOpenGL PyOpenGL_accelerate
 ```
-Once you have it, simply run it with `python <path_to_script>/sierpinski.py` (Windows user might need to modify these commands slightly, but the idea is the same)
+Once you have it, simply run it with `python <path_to_script>/sierpinski.py`
+
+#### Windows users:
+Apparently, `pip` doesn't come with all the right dependencies on Windows. It is commonly suggested to download OpenGL packages from [here](https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.lfd.uci.edu%2F~gohlke%2Fpythonlibs%2F%23pyopengl&h=AT3DRx9-IAKM8CQkXjTvkoZnODYOczhgQ8BE4QRRnbiVxhG_JUc6avOKWaQYowc4CLacBHKVIKs92aohczKIflbr3LkNn4Kammdxop28D_ERG1P5gmPRojggQh7ttw). The numbers in the file names correspond to your version of python (the `cpXX` part) and whether your system is 32- or 64-bit. Once you have the right file,
+```
+pip install package_you_downloaded.whl
+```
+should install it.
